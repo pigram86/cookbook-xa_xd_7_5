@@ -16,3 +16,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+windows_zipfile "xa_xd_7_5" do
+  source node['xa_xd_7_5']['url']
+  action :unzip
+  not_if {::File.exists?(node['xa_xd_7_5']['dir'])}
+  not_if {reboot_pending?}
+end
+
+batch "director" do
+  code <<-EOH
+  c:\\xa_xd_7_5\\x64\\XenDesktopSetup\\XenDesktopServerSetup.exe /quiet /COMPONENTS DIRECTOR /CONFIGURE_FIREWALL
+  EOH
+  not_if {::File.exists?(node['director']['dir'])}
+  not_if {reboot_pending?}
+end
+
+windows_reboot 60 do
+  reason 'Chef said to'
+  only_if {reboot_pending?}
+end

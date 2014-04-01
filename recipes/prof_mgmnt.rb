@@ -16,3 +16,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+windows_zipfile "xa_xd_7_5" do
+  source node['xa_xd_7_5']['url']
+  action :unzip
+  not_if {::File.exists?(node['xa_xd_7_5']['dir'])}
+  not_if {reboot_pending?}
+end
