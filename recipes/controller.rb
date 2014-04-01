@@ -27,7 +27,7 @@ batch "controller" do
   code <<-EOH
   c:\\xa_xd_7_5\\x64\\XenDesktopSetup\\XenDesktopServerSetup.exe /quiet /Components CONTROLLER /CONFIGURE_FIREWALL
   EOH
-  not_if {::File.exists?(node[['ctrl']['srv'])}
+  not_if {::File.exists?(node['ctrl']['srv'])}
   not_if {reboot_pending?}
 end
 

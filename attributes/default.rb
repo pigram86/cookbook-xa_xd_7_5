@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-default['xa_xd_7_5']['url'] = "https://dl.dropboxusercontent.com/u/36379525/XA_XD7_5.zip"
+default['xa_xd_7_5']['url'] = "https://dl.dropboxusercontent.com/u/36379525/xa_xd_7_5.zip"
 default['xa_xd_7_5']['dir'] = "C:/xa_xd_7_5"
 default['ctrl']['srv'] = "C:/Program Files/Citrix/Broker/Service/BrokerService.exe"
 default['director']['dir'] = "C:/inetpub/wwwroot/Director"
