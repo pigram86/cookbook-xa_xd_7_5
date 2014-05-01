@@ -27,7 +27,8 @@ license.rb - Installs Citrix License component
 prof_mgmnt.rb - Installs Profile Mgmnt component
 storefront.rb - Installs Citrix Storefront component
 studio.rb - Installs Desktop Studio component
-vda_hosted.rb - Installs VDA for server component
+vda_hosted.rb - Installs VDA for XenApp
+vda_hosted_master.rb - Installs VDA for XenApp and sets as master image.
 
 # Author
 
