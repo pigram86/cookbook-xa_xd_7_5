@@ -25,7 +25,7 @@ end
 
 batch "director" do
   code <<-EOH
-  c:\\xa_xd_7_5\\x64\\XenDesktopSetup\\XenDesktopServerSetup.exe /quiet /COMPONENTS DIRECTOR /CONFIGURE_FIREWALL
+  c:\\xa_xd_7_5\\x64\\XenDesktopSetup\\XenDesktopServerSetup.exe /quiet /COMPONENTS DESKTOPDIRECTOR /CONFIGURE_FIREWALL
   EOH
   not_if {::File.exists?(node['director']['dir'])}
   not_if {reboot_pending?}

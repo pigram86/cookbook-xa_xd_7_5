@@ -25,7 +25,7 @@ end
 
 batch "all_in_one" do
   code <<-EOH
-  c:\\xa_xd_7_5\\x64\\XenDesktopSetup\\XenDesktopServerSetup.exe /quiet /COMPONENTS LICENSE /CONFIGURE_FIREWALL
+  c:\\xa_xd_7_5\\x64\\XenDesktopSetup\\XenDesktopServerSetup.exe /quiet /COMPONENTS LICENSESERVER /CONFIGURE_FIREWALL
   EOH
   not_if {::File.exists?(node['licsrv']['dir'])}
   not_if {reboot_pending?}
